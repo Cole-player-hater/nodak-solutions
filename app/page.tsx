@@ -24,8 +24,38 @@ export default function Portfolio() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const [barrelRoll, setBarrelRoll] = useState(false);
+
+  useEffect(() => {
+    const konami = [
+      "ArrowUp",
+      "ArrowUp",
+      "ArrowDown",
+      "ArrowDown",
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowLeft",
+      "ArrowRight",
+      "b",
+      "a",
+    ];
+    let progress = 0;
+    const handleKey = (e: KeyboardEvent) => {
+      progress = e.key === konami[progress] ? progress + 1 : 0;
+      if (progress === konami.length) {
+        progress = 0;
+        setBarrelRoll(true);
+        setTimeout(() => setBarrelRoll(false), 1000);
+      }
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, []);
+
   return (
-    <div className="bg-slate-950 text-slate-100 min-h-screen">
+    <div
+      className={`bg-slate-950 text-slate-100 min-h-screen ${barrelRoll ? "animate-[barrel-roll_1s_ease-in-out]" : ""}`}
+    >
       {/* Navigation */}
       <nav
         className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "bg-slate-950/90 backdrop-blur-lg border-b border-slate-800" : "bg-transparent"}`}
@@ -33,7 +63,10 @@ export default function Portfolio() {
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-2">
-              <LuCodeXml size={32} className="text-cyan-400" />
+              <LuCodeXml
+                size={32}
+                className="text-cyan-400 animate-[spin_3s_linear_infinite] motion-reduce:animate-none"
+              />
               <span className="text-2xl font-bold">NoDak Solutions</span>
             </div>
 
@@ -140,6 +173,12 @@ export default function Portfolio() {
           <p className="text-xl text-slate-400 mb-12 max-w-2xl mx-auto">
            I do things to big girls
           </p>
+          <div className="overflow-hidden whitespace-nowrap mb-8 font-mono text-yellow-300">
+            <div className="animate-[marquee_10s_linear_infinite] motion-reduce:animate-none">
+              ★ WELCOME TO MY HOMEPAGE ★ BEST VIEWED IN NETSCAPE NAVIGATOR ★
+              SIGN MY GUESTBOOK ★
+            </div>
+          </div>
           <div className="flex gap-4 justify-center flex-wrap">
             <a
               href="#services"
@@ -312,6 +351,13 @@ export default function Portfolio() {
             <p className="text-slate-500 text-sm">
               © 2025 NoDak Solutions. Building the future, one line of code at
               a time.
+            </p>
+            <p className="mt-4 font-mono text-xs text-lime-400">
+              You are visitor #
+              <span className="bg-black px-1 tracking-widest">000069</span>
+              <span className="animate-[blink_1s_step-end_infinite] motion-reduce:animate-none">
+                {" "}🚧 UNDER CONSTRUCTION 🚧
+              </span>
             </p>
           </div>
         </div>
