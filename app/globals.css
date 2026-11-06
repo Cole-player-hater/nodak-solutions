@@ -48,5 +48,16 @@ body {
   .hero-slam,
   .hero-glitch {
     animation: none;
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes barrel-roll {
+  to {
+    transform: rotate(360deg);
   }
 }
