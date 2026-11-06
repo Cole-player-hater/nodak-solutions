@@ -166,10 +166,45 @@ export default function Portfolio() {
               Wyatt @ NoDak Solutions
             </span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-          <span className="hero-slam block">Finding Big Girls</span>
-          <span className="hero-glitch block">Making Them Cry</span>
-          </h1>
+         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+  <span className="wild-hero-top block">Finding Big Girls</span>
+  <span className="wild-hero-bottom block">Making Them Cry</span>
+</h1>
+
+<style>{`
+  @media (prefers-reduced-motion: no-preference) {
+    .wild-hero-top {
+      animation: wild-hero-slam 900ms both;
+    }
+
+    .wild-hero-bottom {
+      animation: wild-hero-glitch 2.4s 250ms infinite both;
+    }
+  }
+
+  .wild-hero-bottom {
+    background: linear-gradient(90deg, #34d399, #22d3ee, #a855f7, #fb7185);
+    background-size: 250% 100%;
+    background-clip: text;
+    color: transparent;
+  }
+
+  @keyframes wild-hero-slam {
+    0%   { opacity: 0; transform: translateY(-1em) rotate(-12deg) scale(.6); }
+    55%  { opacity: 1; transform: translateY(.08em) rotate(4deg) scale(1.12, .8); }
+    75%  { transform: translateY(-.06em) rotate(-2deg) scale(.96, 1.1); }
+    100% { transform: none; }
+  }
+
+  @keyframes wild-hero-glitch {
+    0%, 100% { transform: none; background-position: 0% 50%; }
+    55%      { transform: none; background-position: 100% 50%; }
+    60%      { transform: translateX(-.1em) skewX(-18deg); filter: drop-shadow(5px 0 #f472b6); }
+    64%      { transform: translateX(.1em) skewX(16deg); filter: drop-shadow(-5px 0 #22d3ee); }
+    69%      { transform: translateY(-.06em) skewX(-8deg); }
+    75%      { transform: none; }
+  }
+`}</style>
           <p className="text-xl text-slate-400 mb-12 max-w-2xl mx-auto">
            I do things to big girls
           </p>
