@@ -29,3 +29,24 @@ body {
     opacity: 0;
   }
 }
+ 80% {
+    transform: translateX(-0.08em) skewX(-12deg);
+    filter: drop-shadow(4px 0 #22d3ee) drop-shadow(-4px 0 #ec4899);
+  }
+
+  85% {
+    transform: translateX(0.08em) skewX(12deg);
+    filter: drop-shadow(-4px 0 #22d3ee) drop-shadow(4px 0 #ec4899);
+  }
+
+  89% {
+    transform: translateY(-0.06em) skewX(-6deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slam,
+  .hero-glitch {
+    animation: none;
+  }
+}
