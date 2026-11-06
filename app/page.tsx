@@ -134,10 +134,8 @@ export default function Portfolio() {
             </span>
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Finding Big Girls
-            <span className="block bg-linear-to-r from-emerald-400 via-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
-              Making Them Cry
-            </span>
+          <span className="hero-slam block">Finding Big Girls</span>
+          <span className="hero-glitch block">Making Them Cry</span>
           </h1>
           <p className="text-xl text-slate-400 mb-12 max-w-2xl mx-auto">
            I do things to big girls
