@@ -140,9 +140,7 @@ export default function Portfolio() {
             </span>
           </h1>
           <p className="text-xl text-slate-400 mb-12 max-w-2xl mx-auto">
-            Full-stack developer crafting modern web applications and AI-powered
-            solutions with clean code, innovative design, and performance-first
-            architecture
+           I do things to big girls
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <a
@@ -165,9 +163,8 @@ export default function Portfolio() {
       <section id="services" className="py-20 px-6 bg-slate-900/50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-4 text-center">What I Build</h2>
-          <p className="text-slate-400 text-center mb-12 max-w-2xl mx-auto">
-            From simple business websites to complex web applications, I deliver
-            solutions tailored to your needs
+          <p className="text-slate-400 text-center mb-12 max-w-2xl mx-auto animate-[blink_1s_step-end_infinite] motion-reduce:animate-none">
+            From 300 to 500 i tackle every problem at hand
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="p-6 rounded-xl bg-linear-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 hover:border-emerald-400/50 transition-all">
